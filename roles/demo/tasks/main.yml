@@ -1,0 +1,5 @@
+---
+- name: Upload template file to /home/ubuntu/test1.txt
+  template:
+    src: test1.txt
+    dest: /home/ubuntu/test1.txt
