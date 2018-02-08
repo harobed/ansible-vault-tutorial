@@ -3,7 +3,8 @@
 In this tutorial, I try to explain how to structure one Ansible environment with:
 
 * [Ansible Vault](http://docs.ansible.com/ansible/2.4/vault.html) support
-* Ansible Vault password is stored in [secret file](secrets/ansible-vault-password.txt.gpg) encrypted with [GPG](https://en.wikipedia.org/wiki/GNU_Privacy_Guard)
+* master key is stored in [secret file](secrets/ansible-vault-password.txt.gpg) encrypted with [GPG](https://en.wikipedia.org/wiki/GNU_Privacy_Guard)
+* Many users support: master key can is encrypted with several GPG Keys
 
 ## Prerequisite
 

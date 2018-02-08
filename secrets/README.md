@@ -11,12 +11,19 @@ Generate random password:
 $ pwgen 20 1 -s -1 > ansible-vault-password.txt
 ```
 
-Export your GPG ID in `MAIN_GPG_KEY`.
-
-Encrypt file:
+Import some keys in GPG:
 
 ```
-$ gpg -e -r $MAIN_GPG_KEY ansible-vault-password.txt
+$ gpg --keyserver hkp://pgp.key-server.io/ --search-keys contact@example.com
+```
+
+Encrypt file with multi user recipients:
+
+```
+$ gpg -e \
+  -r user1@example.com \
+  -r contact@example.com \
+  ansible-vault-password.txt
 ```
 
 Note: don't commit this `ansible-vault-password.txt`, it is present in [../.gitignore](../.gitignore)
