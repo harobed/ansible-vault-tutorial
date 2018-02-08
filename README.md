@@ -91,7 +91,7 @@ variable: password
 
 ## How Ansible Vault password is configured
 
-Main Ansible vault password is stored in [secrets/ansible-vault-password.txt.gpg](secrets/ansible-vault-password.txt.gpg) file.
+Master key is stored in [secrets/ansible-vault-password.txt.gpg](secrets/ansible-vault-password.txt.gpg) file.
 Read [secrets/README.md](secrets/README.md) to know how to generate this file.
 
 Default Vault password file is configured like this in [ansible.cfg](ansible.cfg)
@@ -100,7 +100,7 @@ Default Vault password file is configured like this in [ansible.cfg](ansible.cfg
 vault_password_file = secrets/ansible-vault.sh
 ```
 
-The [secrets/ansible-vault.sh](secrets/ansible-vault.sh) file is a script which use gpg to decrypt ansible vault password:
+The [secrets/ansible-vault.sh](secrets/ansible-vault.sh) file is a script which use gpg to decrypt master key:
 
 ```
 #!/bin/bash
